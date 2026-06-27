@@ -1,3 +1,4 @@
+
 package utils;
 
 import java.text.SimpleDateFormat;
@@ -7,14 +8,14 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
-public class ExtentReporManager {
+public class ExtentReportManager {
 
 	private static ExtentReports extent;
 	private static ExtentTest test;
 
 	public static ExtentReports getReportInstance() {
 		if (extent == null) {
-			String timestamp = new SimpleDateFormat("ttt-MM-dd_HH-mm-ss").format(new Date());
+			String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
 			String reportPath = "reports/ExtentReport_" + timestamp + ".html";
 			ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
 
