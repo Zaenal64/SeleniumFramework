@@ -35,4 +35,30 @@ public class LoginTest extends BaseTest {
 		test.pass("Login Succesfull");
 	}
 	
+	@Test
+	public void testInValidLogin() {
+
+		Log.info("Starting login test...");
+		test = ExtentReportManager.createTest("Login Test with invalid Credentials");
+		
+		test.info("Navigating to URL");
+		LoginPage loginPage = new LoginPage(driver);
+		
+		
+		Log.info("Adding Credentials");
+		test.info("Adding Credentials");
+		loginPage.enterUsername("Admin123");
+		loginPage.enterPassword("admin123@");
+		test.info("Clicking on Login Button");
+		loginPage.clickLogin();
+		
+		System.out.println("Text of the invalid credentials is : " + loginPage.getInvalidCredentialsMessage());
+		Log.info("Verifying Error text invalid credentials");
+		test.info("Verifying Error Message");
+		
+		Assert.assertEquals(loginPage.getInvalidCredentialsMessage(), "Invalid credentials..123");
+		
+		test.pass("Login Succesfull");
+	}
+	
 }

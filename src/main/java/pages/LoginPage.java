@@ -14,6 +14,7 @@ public class LoginPage {
 
 	private By passwordTextBox = By.name("password");
 	private By loginButton = By.cssSelector("button[type='submit']");
+	private By textInvalidCredentials = By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']");
 
 
 	public LoginPage(WebDriver driver) {
@@ -39,6 +40,15 @@ public class LoginPage {
 		wait.until(ExpectedConditions.elementToBeClickable(loginButton));
 		Log.info("Clicking login button.");
 		driver.findElement(loginButton).click();
+	}
+	
+	public String getInvalidCredentialsMessage() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+		Log.info("Invalid Credentials");
+		return wait.until(ExpectedConditions
+	            .visibilityOfElementLocated(textInvalidCredentials))
+	            .getText();
 	}
 
 }
