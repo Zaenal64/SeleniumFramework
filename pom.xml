@@ -42,20 +42,35 @@
 			<version>2.25.4</version>
 		</dependency>
 
-		<!-- Source:
+		<!-- Source: Membuat report hasil automation testing (HTML)
 		https://mvnrepository.com/artifact/com.aventstack/extentreports -->
 		<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>5.0.9</version>
-			<scope>compile</scope>
 		</dependency>
-		<!-- Source: https://mvnrepository.com/artifact/commons-io/commons-io -->
+		
+		<!-- Source: Operasi file, terutama menyimpan screenshot
+		https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
 			<version>2.22.0</version>
-			<scope>compile</scope>
+		</dependency>
+
+		<!-- Source: Membaca/menulis file Excel .xls
+		https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.5.1</version>
+		</dependency>
+
+		<!-- Source: Membaca/menulis file Excel .xlsx -->
+		<dependency> 
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.5.1</version>
 		</dependency>
 	</dependencies>
 
